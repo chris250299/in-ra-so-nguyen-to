@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hiển thị số nguyên tố</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+var num = parseInt(prompt("Nhập một số nguyên"));
+function check(x) {
+    if (x === 2) return "SNT";
+    if (x === 1 || x % 2 === 0) return "nSNT";
+    for (let i = 3; i < (x - 1); i += 2) {
+        if (x % i === 0) {
+            return "nSNT";
+        }
+    }
+    return "SNT";
+}
+
+var ketqua = "";
+var count = 0;
+for (let i = 1; count < num; i++) {
+    if (check(i) === "SNT") {
+        ketqua = ketqua + " " + i;
+        count++;
+    }
+}
+alert(ketqua);
+</script>
+</body>
+</html>
